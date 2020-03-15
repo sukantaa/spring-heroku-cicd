@@ -24,7 +24,7 @@
 		
 		<!-- property useful for  spotify's dockerfile-maven-plugin -->
 		
-		<!-- Instead of "fanjups", please add your Docker Hub username -->
+		<!-- Instead of "sukantaa1", please add your Docker Hub username -->
 		
 		<docker.image.prefix>sukantaa1</docker.image.prefix>
 		
@@ -83,9 +83,8 @@
 				</executions>
 	            <configuration>
 	                <repository>${docker.image.prefix}/${project.artifactId}</repository>
-			
 	                <serverId>index.docker.io</serverId>
-	      		<registryUrl>https://index.docker.io:443/v1/</registryUrl>
+	      			<registryUrl>https://index.docker.io:443/v1/</registryUrl>
 	            </configuration>
         	</plugin>
 		</plugins>
