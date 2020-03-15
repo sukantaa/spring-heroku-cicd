@@ -11,11 +11,35 @@
 	<groupId>com.demo</groupId>
 	<artifactId>spring-heroku-cicd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cicd</name>
-	<description>Demo project for Spring Boot</description>
+	<name>spring-heroku-cicd</name>
+	<description>Implementing CI/CD of spring boot application</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		
+      	<!-- solving error : Invalid or corrupt jarfile /app.jar -->
+      
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
+		<!-- property useful for  spotify's dockerfile-maven-plugin -->
+		
+		<!-- Instead of "fanjups", please add your Docker Hub username -->
+		
+		<docker.image.prefix>sukantaa1</docker.image.prefix>
+		
+		<!--Not adding artifacts to remote repository-->
+		
+		<maven.deploy.skip>true</maven.deploy.skip>
+		
+		<!-- GitHub OAuth token & server -->
+		<github.global.server>github</github.global.server>
+        <github.global.oauth2Token>${env.GITHUB_OAUTH_TOKEN}</github.global.oauth2Token>
+        
+        <!-- Useful for Heroku Deployment -->
+        
+        <full-artifact-name>target/${project.artifactId}-${project.version}.jar</full-artifact-name>
+		
 	</properties>
 
 	<dependencies>
@@ -43,6 +67,27 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+	            <groupId>com.spotify</groupId>
+	            <artifactId>dockerfile-maven-plugin</artifactId>
+	            <version>1.4.9</version>
+	            <executions>
+					<execution>
+						<id>default</id>
+						<phase>install</phase>
+						<goals>
+							<goal>build</goal>
+							<goal>push</goal>
+						</goals>
+					</execution>
+				</executions>
+	            <configuration>
+	                <repository>${docker.image.prefix}/${project.artifactId}</repository>
+			
+	                <serverId>index.docker.io</serverId>
+	      		<registryUrl>https://index.docker.io:443/v1/</registryUrl>
+	            </configuration>
+        	</plugin>
 		</plugins>
 	</build>
 

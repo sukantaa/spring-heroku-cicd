@@ -1,2 +1,3 @@
 # spring-heroku-cicd
-Deployment of Spring App in heroku using travis
+CI/CD of Spring App in heroku using travis
+[![Build Status](https://travis-ci.org/sukantaa/spring-heroku-cicd.svg?branch=master)](https://travis-ci.org/github/sukantaa/spring-heroku-cicd)
