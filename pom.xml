@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>com.demo</groupId>
 	<artifactId>spring-heroku-cicd</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-heroku-cicd</name>
 	<description>Implementing CI/CD of spring boot application</description>
@@ -67,6 +68,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			<!-- spotify's dockerfile-maven-plugin -->
 			<plugin>
 	            <groupId>com.spotify</groupId>
 	            <artifactId>dockerfile-maven-plugin</artifactId>
