@@ -10,7 +10,7 @@ LABEL maintainer="sukantaban1993@gmail.com"
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
 
-COPY spring-heroku-cicd-0.0.1-SNAPSHOT.jar /usr/app/
+COPY * /usr/app/
 WORKDIR /usr/app
 
 #ENTRYPOINT ["java", "-jar", "nasapicture-0.0.1-SNAPSHOT.war"]
