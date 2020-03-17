@@ -14,7 +14,7 @@ EXPOSE 8080
 ARG JAR_FILE
 
 # Add the application's jar to the container
-ADD target/spring-heroku-cicd-0.0.1-SNAPSHOT-docker-info.jar app.jar
+ADD spring-heroku-cicd-0.0.1-SNAPSHOT-docker-info.jar app.jar
 
 # Run the jar file 
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
