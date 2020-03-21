@@ -12,7 +12,7 @@ services:
 # SonarCloud
 addons:
   sonarcloud:
-    organization: "spring-boot-starter-parent"
+    organization: "spring-heroku-cicd"
     token:
       secure: $SONAR_TOKEN # encrypted value of your token
 
