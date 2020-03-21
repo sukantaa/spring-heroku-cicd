@@ -28,6 +28,7 @@
 	<!-- Instead of "sukantaa1", please add your Docker Hub username -->
 
 	<docker.image.prefix>sukantaa1</docker.image.prefix>
+	<dockerfile-maven-version>1.4.9</dockerfile-maven-version>
 
 	<!--Not adding artifacts to remote repository-->
 
@@ -71,6 +72,13 @@
 			
 			<!-- spotify's dockerfile-maven-plugin -->
 			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			<!-- spotify's dockerfile-maven-plugin -->
+			
+			<plugin>
 	            <groupId>com.spotify</groupId>
 	            <artifactId>dockerfile-maven-plugin</artifactId>
 	            <version>1.4.9</version>
@@ -85,13 +93,16 @@
 					</execution>
 				</executions>
 	            <configuration>
+<!-- 	            <skip>${dockerfile.skip}</skip> -->
+					<buildArgs>
+					         <JAR_FILE>${full-artifact-name}</JAR_FILE>
+					</buildArgs>
 	                <repository>${docker.image.prefix}/${project.artifactId}</repository>
 	                <serverId>index.docker.io</serverId>
 	      			<registryUrl>https://index.docker.io:443/v1/</registryUrl>
 	            </configuration>
         	</plugin>
-        	<!-- maven-dependency-plugin useful for creating docker image -->
-        	
+<!-- maven-dependency-plugin useful for creating docker image -->        	
         	<plugin>
 		     
 			    <groupId>org.apache.maven.plugins</groupId>
@@ -118,6 +129,8 @@
 			    </executions>
 		    
        		</plugin>
+        	
+        	
 			<!-- Generating github  gh pages & maven project documents  -->
             
             <plugin>
