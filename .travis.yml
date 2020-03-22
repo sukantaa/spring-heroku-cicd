@@ -32,7 +32,7 @@ script:
 
 #Generating Site
 after_success:
-- travis_wait mvn site -X
+- travis_wait mvn site -o
 - bash <(curl -s https://codecov.io/bash)
 
 # SonarCloud
