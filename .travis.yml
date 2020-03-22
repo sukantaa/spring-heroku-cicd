@@ -15,6 +15,10 @@ addons:
     organization: "spring-heroku-cicd"
     token:
       secure: $SONAR_TOKEN # encrypted value of your token
+      
+env:
+  global:
+    - secure: $GITHUB_OAUTH_TOKEN
 
 before_install:
 - mvn clean
