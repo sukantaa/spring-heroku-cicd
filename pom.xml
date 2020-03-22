@@ -54,12 +54,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 	</dependencies>
 
@@ -230,5 +224,31 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+	
+	<developers>
+  	<developer>
+  		<email>suakantaban1993@gmail.com</email>
+		<name>Sukanta Banerjee</name>
+		<url>https://github.com/sukantaa</url>
+		<id>sukantaa</id>
+  	</developer>
+      
+  </developers>
+  
+  <organization>
+		<name>Developers Believer</name>
+		<url>https://github.com/sukantaa/</url>
+	</organization>
+  
+  <issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/FanJups/cicd-applied-to-spring-boot-java-app/issues</url>
+  </issueManagement>
+  
+  <scm>
+		<url>https://github.com/sukantaa/spring-heroku-cicd</url>
+		<connection>scm:git:git://github.com/sukantaa/spring-heroku-cicd.git</connection>
+		<developerConnection>scm:git:git://github.com/sukantaa/spring-heroku-cicd.git</developerConnection>
+  </scm>
 
 </project>
