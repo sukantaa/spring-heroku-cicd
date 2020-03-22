@@ -122,7 +122,7 @@
        		<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.7.201606060606</version>
+				<version>0.8.2</version>
 				<executions>
 					<execution>
 						<goals>
@@ -138,7 +138,6 @@
 					</execution>
 				</executions>
 			</plugin>
-        	
         	
 			<!-- Generating github  gh pages & maven project documents  -->
             
