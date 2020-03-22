@@ -56,15 +56,6 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-scala -->
-<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-scala -->
-<dependency>
-    <groupId>com.fasterxml.jackson.module</groupId>
-    <artifactId>jackson-module-scala_2.12</artifactId>
-    <version>2.10.2</version>
-</dependency>
-
-		
 		
 	</dependencies>
 
@@ -153,11 +144,32 @@
 			<!-- Generating github  gh pages & maven project documents  -->
             
             <plugin>
-            
-            	<groupId>org.apache.maven.plugins</groupId>
-            	<artifactId>maven-site-plugin</artifactId>
-            	<version>3.9.0</version>
-            </plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.7.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>1.16</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-site-renderer</artifactId>
+                            <version>1.6</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-core</artifactId>
+                            <version>1.6</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-sink-api</artifactId>
+                            <version>1.6</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
             
             <plugin>
 				<groupId>com.github.github</groupId>
