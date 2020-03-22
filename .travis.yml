@@ -14,8 +14,7 @@ addons:
   sonarcloud:
     organization: "spring-heroku-cicd"
     token:
-      secure: 
-       - echo "$SONAR_TOKEN" # encrypted value of your token
+      secure: $SONAR_TOKEN # encrypted value of your token
 
 before_install:
 - mvn clean
