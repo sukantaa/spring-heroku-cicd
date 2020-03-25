@@ -184,10 +184,8 @@
 	<!-- Useful for GitHub site  -->
 	
 	<reporting>
-  
   		<plugins>
-  		
-  			<plugin>
+  		    <plugin>
 	            <groupId>org.apache.maven.plugins</groupId>
 	            <artifactId>maven-project-info-reports-plugin</artifactId>
 	            <version>3.0.0</version>
